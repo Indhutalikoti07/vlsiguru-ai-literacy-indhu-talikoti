@@ -1,7 +1,7 @@
 
 # Week 01 Engineering Journal
 
-Date: YYYY-MM-DD
+Date: October 8 2026
 
 ## What I Learned That Was Genuinely New
 
