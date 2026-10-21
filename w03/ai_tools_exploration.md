@@ -1,101 +1,136 @@
+
 # AI Tools Exploration
 
 ## 1. Purpose
 
-The purpose of this exploration is to understand how AI tools can help with technical learning, prompt improvement, research, and code understanding. AI responses are useful starting points, but important claims must be checked against reliable sources.
+The purpose of this exploration is to understand how AI tools help with technical learning, prompt improvement, research, and code understanding. AI tools can explain complex concepts in simple language and support programming practice. However, their answers must be checked against reliable sources before accepting them as correct.
 
-## 2. Tools explored or selected for exploration
+## 2. AI Tools Exploration
 
-> **Be accurate:** Keep only the tools I actually used and add my own observations before submission.
+### ChatGPT
 
-| Tool | Potential use in my learning | Observation from my experiment |
-|---|---|---|
-| ChatGPT | Beginner-friendly explanations, prompt refinement, Python and Verilog help | [Add what I actually observed] |
-| Gemini | Getting another explanation and comparing approaches | [Add what I actually observed, if used] |
-| NotebookLM | Asking questions about uploaded reference material and checking cited passages | [Add what I actually observed, if used] |
-| Perplexity | Finding sources for a technical research question | [Add what I actually observed, if used] |
+ChatGPT can explain technical concepts, help improve prompts, assist with Python programming, and clarify Verilog code. It is useful for breaking difficult engineering topics into smaller steps.
 
-I do not need to use every tool. Comparing two tools on the same question is enough to learn how their explanations, evidence, and limitations differ.
+**My learning application:** I used ChatGPT to understand RTL synthesis and improve my questions by providing more context and specifying the format of the answer.
 
-## 3. Prompt experiment: improving a question
+### Gemini
 
-### Prompt A — broad question
+Gemini is another AI assistant that can explain concepts and provide alternative approaches to technical questions. Comparing its responses with ChatGPT can help identify differences in explanations and examples.
+
+**My learning application:** I selected Gemini as a second tool to compare explanations of machine learning and rule-based programming.
+
+**Observation:** After trying both tools, I will record which explanation was clearer, whether useful examples were provided, and whether the technical claims were supported by reliable sources.
+
+## 3. Prompt Experiment: Improving a Question
+
+### Prompt A — Basic Prompt
 
 > Explain RTL synthesis.
 
-This prompt does not specify my background, the level of detail, or the output format.
+This prompt is short but does not specify my background, the level of detail, or the required format.
 
-### Prompt B — improved prompt
+### Prompt B — Improved Prompt
 
-> I am an Electronics and Communication Engineering student learning Verilog and digital design. Explain RTL synthesis in beginner-friendly language. Describe its purpose, the main stages, typical inputs and outputs, and one small Verilog example. Separate verified facts from simplifications, and link to official documentation that I can check. Use headings and finish with three short quiz questions.
+> I am an Electronics and Communication Engineering student learning Verilog and digital design. Explain RTL synthesis in beginner-friendly language. Describe its purpose, basic workflow, inputs, and outputs. Include a simple Verilog example, use headings, and provide official documentation links so I can verify the information. Finish with three short quiz questions.
 
-### What changed and why?
+### What Improved?
 
-- **Context:** The prompt says I am learning Verilog and digital design.
-- **Constraints:** It asks for beginner-friendly language and a small example.
-- **Output format:** It requests headings and quiz questions.
-- **Verification:** It asks for official documentation.
+- **Context:** Identifies me as an ECE student learning Verilog.
+- **Clarity:** Specifies the exact concept I want to understand.
+- **Output format:** Requests headings, an example, and quiz questions.
+- **Verification:** Requests official documentation links.
 
-**My observation:** [Compare the answers you received for Prompt A and Prompt B. Write what improved and whether any part was unclear.]
+**Observation:** The improved prompt gives the AI clearer instructions about my background and the information I need. I will compare both responses to determine whether the improved prompt provides a more useful explanation.
 
-## 4. A second prompt for Python learning
+## 4. Python Learning Prompt
 
-> I am practising Python as part of my engineering learning. Explain this code line by line: [paste a short piece of code I wrote]. Identify the input, output, variables, and control flow. Do not rewrite the whole program immediately. First point out one possible issue, then ask me to predict the output. After I answer, explain the result.
+I also prepared a prompt to support my Python learning.
 
-This prompt encourages understanding instead of only copying a solution.
+### Prompt
 
-**My observation:** [Record what happened when you tried this prompt, or mark it as planned if you have not tried it yet.]
+> I am learning Python. Explain the following code line by line. Identify the variables, input, output, and control flow. Give a simple example and ask me to predict the output before showing the answer. Explain any errors in beginner-friendly language.
 
-## 5. Comparing two AI tools
+### Learning Objective
 
-Ask two tools the same question:
+This prompt encourages me to understand how code works instead of simply copying a solution. It can help me improve debugging skills and prepare for more advanced programming topics.
 
-> What is the difference between machine learning and rule-based programming? Explain using a simple engineering example, and provide a reliable source for each important technical claim.
+**Observation:** I will use this prompt with a Python exercise from my current learning and record what I understood better.
 
-Use this table to record your actual comparison:
+## 5. Comparing Two AI Tools
 
-| Comparison point | Tool 1: [name] | Tool 2: [name] |
+I selected the following question for comparison:
+
+> What is the difference between machine learning and rule-based programming? Explain using a simple engineering example and provide reliable sources for important technical claims.
+
+### Comparison
+
+| Comparison Point | ChatGPT | Gemini |
 |---|---|---|
-| Clarity of explanation | [Your observation] | [Your observation] |
-| Example quality | [Your observation] | [Your observation] |
-| Sources provided | [Your observation] | [Your observation] |
-| Important difference or limitation | [Your observation] | [Your observation] |
+| Main purpose | Explaining concepts and supporting learning | Providing an alternative explanation |
+| Example to investigate | An engineering example involving sensor data | An engineering example involving sensor data |
+| Clarity | To be evaluated after testing | To be evaluated after testing |
+| Source quality | Check the sources provided | Check the sources provided |
+| Limitation | Responses may contain errors and require verification | Responses may contain errors and require verification |
 
-**Conclusion:** [Write which explanation helped you more and why. Do not assume that a more confident answer is necessarily more accurate.]
+### My Conclusion
 
-## 6. Checking an AI-generated claim
+Comparing two AI tools can help me understand different ways of explaining the same technical concept. I should evaluate clarity, examples, and evidence rather than assuming that either tool is always correct.
 
-### Claim to investigate
+After completing the comparison, I will record which explanation was more useful and why.
 
-> “Yosys is an open-source tool used for RTL synthesis.”
+## 6. Verification of an AI-Generated Claim
 
-### Verification source
+### Claim
 
-- Official documentation: [Yosys documentation](https://yosyshq.readthedocs.io/)
+"Yosys is an open-source tool used for RTL synthesis."
 
-### Verification method
+### Verification Source
 
-1. Open the official documentation.
-2. Find the overview or introduction describing Yosys and its purpose.
-3. Check whether the documentation supports the claim.
-4. Record the page or section you consulted and summarize what it establishes.
+- Official documentation: https://yosyshq.readthedocs.io/
+- Official project repository: https://github.com/YosysHQ/yosys
+
+### Verification Process
+
+1. Open the official Yosys documentation.
+2. Read the introduction or overview of the tool.
+3. Check how the documentation describes its purpose.
+4. Compare the documented information with the claim.
 
 ### Result
 
-- **Source consulted:** [Record the exact page or section and access date.]
-- **What the source established:** [Summarize in your own words.]
-- **Conclusion:** [Confirmed / partly confirmed / not confirmed, based on the source you actually checked.]
+- **Source:** Official Yosys documentation and project repository.
+- **What I checked:** The tool's purpose and its role in digital hardware synthesis.
+- **Conclusion:** The claim should be confirmed against the official documentation before submission.
 
-A citation alone does not guarantee that a claim is correct. I should open the source and check that it supports the specific statement.
+This exercise demonstrates why important AI-generated claims should be checked using reliable sources instead of being accepted without verification.
 
-## 7. Responsible use
+## 7. Responsible Use of AI
 
-- Treat AI responses as suggestions to investigate, not automatic proof.
-- Verify important technical claims using official documentation or other reliable primary sources.
-- Test generated code and understand commands before running them.
-- Do not upload confidential RTL, netlists, timing constraints, proprietary design data, or restricted materials to public AI services.
-- Clearly describe how AI helped and take responsibility for my submission.
+- Treat AI responses as suggestions to investigate rather than automatic proof.
+- Verify important technical claims using official documentation.
+- Review and test AI-generated code before using it.
+- Avoid uploading confidential RTL, netlists, timing constraints, or proprietary design data to public AI services.
+- Understand the final work and explain how AI assisted with learning.
 
-## 8. What I learned
+My approach is: **Ask → Check → Try → Explain.**
 
-[Write 3–5 sentences about the most useful tool, the prompt change that improved the response, and one limitation or mistake you noticed.]
+## 8. What I Learned
+
+Exploring AI tools helps me understand how prompts influence the quality and structure of responses. Adding context, constraints, examples, and a requested output format makes a question more specific. Comparing AI tools can reveal differences in explanations, but important claims still need verification. I also learned that AI can support Python and VLSI learning when I actively review and test the information rather than relying on generated answers alone.
+
+## 9. Further Learning
+
+My next steps are to:
+
+- Compare the actual responses from ChatGPT and Gemini.
+- Verify technical claims using official documentation.
+- Continue practising Python through Harvard CS50P.
+- Explore Yosys and understand its basic RTL synthesis workflow.
+- Record questions and difficulties for the ML masterclass.
+
+### References
+
+- ChatGPT: https://chatgpt.com/
+- Gemini: https://gemini.google.com/
+- Yosys documentation: https://yosyshq.readthedocs.io/
+- Harvard CS50P: https://cs50.harvard.edu/python/
