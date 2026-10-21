@@ -1,87 +1,139 @@
+
 # Open-Source VLSI Tool Investigation: Yosys
 
-## 1. Tool overview
+## 1. Introduction
 
-**Tool:** Yosys  
-**Area:** RTL synthesis  
-**Official documentation:** https://yosyshq.readthedocs.io/  
-**Official project repository:** https://github.com/YosysHQ/yosys
+Yosys is an open-source framework for RTL synthesis. It is used to process synthesizable Verilog designs and transform them into a representation of digital logic.
 
-Yosys is an open-source framework for synthesizing digital logic designs. RTL synthesis transforms a hardware description into a representation of the digital logic that implements the design. The exact synthesis flow and output depend on the target technology, commands, and design.
+Official documentation: https://yosyshq.readthedocs.io/projects/yosys/en/latest/
 
-## 2. What problem does it help solve?
+Official GitHub repository: https://github.com/YosysHQ/yosys
 
-A Verilog design describes hardware behaviour or structure at the RTL level. Synthesis helps translate supported RTL into a logic-level netlist that can be used in later hardware implementation steps. Yosys gives learners and engineers a way to explore this process using an open-source tool.
+## 2. Purpose of Yosys
 
-## 3. Typical inputs and outputs
+Yosys helps convert a hardware design described in Verilog RTL into a synthesized logic netlist.
 
-| Item | Description |
-|---|---|
-| Input | Supported synthesizable Verilog RTL and synthesis commands |
-| Processing | Parsing, design checks, logic transformations and synthesis passes |
-| Output | A synthesized netlist; reports or intermediate representations may also be produced |
-| Depends on | RTL constructs, selected commands, target technology and flow configuration |
+Its main purposes include:
 
-The exact files and results depend on the synthesis script and target. A generic workflow should not be treated as a guarantee that every design or technology is supported in the same way.
+- Reading and processing synthesizable Verilog code.
+- Performing logic synthesis and optimization.
+- Producing netlists for further hardware design steps.
+- Supporting learning and experimentation with synthesis algorithms.
 
-## 4. Basic workflow to investigate
+Yosys is useful for students who want to understand how Verilog code can be transformed into digital logic.
 
-A typical learning workflow is:
+## 3. Inputs and Outputs
 
-1. Write a small synthesizable Verilog module, such as a 2-to-1 multiplexer.
-2. Read the Yosys installation and command documentation.
-3. Load the Verilog design.
-4. Run an appropriate synthesis flow for the intended target.
-5. Inspect the output netlist and tool messages.
-6. Compare the synthesized logic with the original RTL.
+### Inputs
 
-Consult the official documentation for commands appropriate to the installed version and target. Do not run commands you do not understand.
+- Verilog RTL source files.
+- Synthesis commands or scripts.
+- Target technology information when required by the selected flow.
 
-## 5. Small example RTL
+### Outputs
 
-The following is a simple 2-to-1 multiplexer that can be used as a learning input:
+- A synthesized netlist.
+- Intermediate design representations.
+- Tool messages and reports that help examine the synthesis process.
+
+The exact output depends on the design, commands, and target technology.
+
+## 4. Basic Workflow
+
+A typical Yosys workflow includes the following steps:
+
+1. Write a synthesizable Verilog module.
+2. Load the Verilog file into Yosys.
+3. Check the design hierarchy.
+4. Run synthesis and optimization passes.
+5. Generate a netlist.
+6. Inspect the output and review the tool messages.
+
+This workflow helps demonstrate how an RTL description is processed into a representation of digital logic.
+
+## 5. Example Verilog Design
+
+The following example describes a 2-to-1 multiplexer.
 
 ```verilog
 module mux2 (
-    input  wire a,
-    input  wire b,
-    input  wire sel,
+    input wire a,
+    input wire b,
+    input wire sel,
     output wire y
 );
+
     assign y = sel ? b : a;
+
 endmodule
 ```
 
-When `sel` is `0`, the output follows `a`; when `sel` is `1`, the output follows `b`.
+### Explanation
 
-**Experiment status:** This example is included as a suggested experiment. I should only report successful synthesis after I have actually run Yosys and inspected its output.
+- `a` and `b` are the data inputs.
+- `sel` is the select input.
+- `y` is the output.
+- When `sel = 0`, the output follows `a`.
+- When `sel = 1`, the output follows `b`.
 
-- **Environment / version:** [Record your OS and Yosys version, if installed.]
-- **Commands or script used:** [Paste the commands you actually ran.]
-- **Observed output:** [Describe the result or include a short excerpt.]
-- **Issue encountered, if any:** [Record the error and how you investigated it.]
+This small circuit is a suitable example for exploring RTL synthesis.
 
-## 6. Where might AI or ML help?
+## 6. Basic Synthesis Experiment
 
-Possible research directions—not claims that Yosys automatically provides these capabilities—include:
+After installing Yosys, save the example above in a file named `mux2.v`.
 
-- Helping explain synthesis logs and unfamiliar warnings.
-- Suggesting candidate RTL rewrites for a designer to review and test.
-- Exploring design alternatives and comparing area, timing, or power results when suitable tools and constraints are available.
-- Classifying recurring error messages to help beginners find relevant documentation.
+A basic command to synthesize the design for a generic target is:
 
-Any AI-generated rewrite must be checked for functional equivalence and evaluated using the relevant synthesis and verification flow. An apparent improvement in code readability does not automatically mean better hardware quality.
+```bash
+yosys -p "read_verilog mux2.v; hierarchy -top mux2; synth -top mux2; stat; write_verilog mux2_synth.v"
+```
 
-## 7. Questions for further exploration
+### Expected purpose of the commands
 
-1. How does the selected synthesis flow transform the multiplexer RTL into logic?
-2. How can I inspect the generated netlist and understand its cells or logic operators?
-3. How would the results change for a different target technology or synthesis script?
-4. What verification is needed to confirm that a modified RTL design preserves the intended behaviour?
+- `read_verilog`: Reads the Verilog source.
+- `hierarchy -top mux2`: Identifies `mux2` as the top-level module.
+- `synth -top mux2`: Runs a generic synthesis flow.
+- `stat`: Displays design statistics.
+- `write_verilog mux2_synth.v`: Writes the synthesized design to a Verilog file.
 
-## 8. Sources
+**Experiment record:** I will record my Yosys version, whether the command ran successfully, and what appeared in the synthesis statistics after I perform this experiment.
 
-- [Yosys documentation](https://yosyshq.readthedocs.io/)
-- [Yosys source repository](https://github.com/YosysHQ/yosys)
+I should not claim that synthesis succeeded until I have actually run the command and checked the output.
 
-**My conclusion:** [After consulting the documentation or running the example, summarize what you learned about the tool, its workflow, and one limitation or question that remains.]
+## 7. Possible Applications of AI and Machine Learning
+
+AI and ML could potentially assist VLSI engineers in several ways:
+
+- Explaining synthesis warnings and error messages.
+- Helping engineers understand unfamiliar Verilog code.
+- Suggesting alternative RTL implementations for evaluation.
+- Comparing synthesis results across different design alternatives.
+- Helping analyze area, timing, and power data when suitable measurements are available.
+
+These are potential applications. AI-generated code must be reviewed and verified, and any claimed hardware improvement must be measured using appropriate tools.
+
+## 8. Limitations and Safety
+
+- Yosys does not replace every commercial electronic design automation tool.
+- The supported language features and available synthesis flows depend on the version and configuration.
+- RTL synthesis alone does not complete the entire physical design process.
+- Synthesized output should be inspected and verified.
+- Confidential RTL and proprietary design information should not be uploaded to public AI tools.
+
+## 9. What I Learned
+
+Yosys is an open-source tool that helps engineers explore RTL synthesis. It processes supported Verilog designs and can generate synthesized netlists. Studying its workflow helps connect Verilog coding with the logic representation used in hardware design.
+
+My next step is to run a small multiplexer example and inspect the synthesis statistics and generated netlist.
+
+## 10. Questions for Further Learning
+
+1. How does Yosys optimize a Verilog design during synthesis?
+2. How can I inspect and understand the generated netlist?
+3. How can AI and ML help engineers compare hardware designs while preserving functional correctness?
+
+## 11. References
+
+- Yosys documentation: https://yosyshq.readthedocs.io/projects/yosys/en/latest/
+- Yosys official repository: https://github.com/YosysHQ/yosys
+- Yosys introduction: https://github.com/YosysHQ/yosys/blob/main/docs/source/introduction.rst
