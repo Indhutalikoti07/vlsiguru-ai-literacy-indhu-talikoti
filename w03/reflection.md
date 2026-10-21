@@ -1,46 +1,65 @@
-# Week 03 Reflection
 
-## 1. Which AI tool was most useful, and for what task?
+# Week 03 Reflection — VLSIGuru AI Literacy Layer
 
-[Name the tool you actually used. Explain which task it helped with and why.]
+## 1. Which AI tool was most useful to me?
+
+ChatGPT is useful for breaking down technical concepts into simple explanations and helping me understand Python and Verilog code. It can also help me improve my questions by adding context and specifying the type of answer I need.
+
+I learned that AI should support my understanding rather than replace my own thinking.
 
 ## 2. What prompt change improved the answer most?
 
-[Describe the difference between your first prompt and your refined prompt. Mention the effect of adding context, constraints, an example, a requested format, or a request for sources.]
+Adding context, constraints, and a clear output format makes a prompt more specific.
 
-## 3. What is one claim you verified?
+For example, instead of asking "Explain RTL synthesis," I can explain that I am an ECE student learning Verilog and request a beginner-friendly explanation, a small example, and official documentation links.
 
-- **Claim:** [Write the claim.]
-- **Source:** [Give the official page or source you opened.]
-- **What it established:** [Summarize the relevant evidence in your own words.]
-- **Conclusion:** [Explain whether the evidence supported the claim.]
+This approach helps me focus on the information I need.
 
-## 4. What did you learn about the open-source VLSI tool?
+## 3. What is one claim I verified?
 
-[Describe the tool's purpose, typical inputs and outputs, and what you actually explored. If you did not run the tool, clearly say that you reviewed its documentation and identify a practical next step.]
+**Claim:** Yosys is an open-source tool used for RTL synthesis.
 
-## 5. Python progress
+**Source:** https://github.com/YosysHQ/yosys
 
-- **Topic or exercise continued:** [Enter your actual CS50P topic or exercise.]
-- **What I implemented:** [Describe the code you wrote.]
-- **What I understand better now:** [Explain one concept.]
-- **What I still need to practise:** [State one area.]
+**What I investigated:** The official Yosys project information and documentation describe the tool and its role in digital hardware synthesis.
+
+**Conclusion:** I will use the official documentation to confirm the claim and record the specific page I consulted. This taught me that technical information from AI should be checked against reliable sources.
+
+## 4. What did I learn about the open-source VLSI tool?
+
+I explored Yosys, an open-source RTL synthesis tool. It processes supported Verilog designs and can generate synthesized netlists.
+
+I also studied a 2-to-1 multiplexer example to understand how a simple RTL design can be used to explore synthesis.
+
+My next step is to run the example in Yosys, inspect the synthesis statistics, and examine the generated netlist. I will record the actual results after running the experiment.
+
+## 5. My Python learning progress
+
+I will continue Harvard CS50P from my current learning point.
+
+My focus is on understanding variables, data types, conditionals, loops, functions, and how to debug Python programs.
+
+I want to become comfortable explaining my code and predicting its output before running it.
+
+**Python topic or exercise completed:** [Enter the topic or exercise you actually completed.]
+
+**What I learned:** [Describe one concept you understand better.]
 
 ## 6. Two questions for the ML masterclass
 
-1. How can I evaluate whether a machine-learning model generalizes to new engineering data rather than merely fitting its training data?
-2. What are practical ways to combine ML with VLSI design workflows while validating correctness, timing, area, and power?
-
-I can replace these questions with my own questions as I learn more.
+1. How can I determine whether a machine-learning model generalizes well to new data instead of only performing well on its training data?
+2. How can AI and ML be applied to VLSI design while maintaining functional correctness and evaluating area, timing, and power?
 
 ## 7. Overall reflection
 
-[Write a short paragraph in your own words about what surprised you, what you found useful, what you verified, and what you plan to explore next.]
+Week 03 helped me understand the importance of exploring AI tools practically, improving prompts, and verifying technical information. I also learned about Yosys and how RTL synthesis connects Verilog code with a synthesized logic representation.
 
-## Next steps
+I plan to continue Python practice, explore open-source VLSI tools, and use AI responsibly as a learning assistant. My goal is to understand the concepts and experiments well enough to explain them independently.
 
-- [ ] Finish and verify the AI-tool experiment notes.
-- [ ] Check one technical claim against an official source.
-- [ ] Consult the Yosys documentation and, if feasible, run the multiplexer example.
+## 8. Next Steps
+
+- [ ] Compare the actual responses from two AI tools.
+- [ ] Verify one technical claim using official documentation.
+- [ ] Run the Yosys multiplexer example if the tool is available.
 - [ ] Continue Python practice.
-- [ ] Review this folder and replace all bracketed notes before submission.
+- [ ] Review all Week 03 files before submission.
